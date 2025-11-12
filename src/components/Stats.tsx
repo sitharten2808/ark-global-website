@@ -42,16 +42,7 @@ const Stats = () => {
   return (
     <section className="py-20 bg-gradient-subtle">
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div 
-          className="w-full h-full bg-repeat" 
-          style={{
-            backgroundImage: "url('/lovable-uploads/253dbfb4-0343-43a6-9921-2305f7488530.png')",
-            backgroundSize: "cover",
-            backgroundPosition: "center"
-          }}
-        />
-      </div>
+
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">

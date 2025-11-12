@@ -1,128 +1,67 @@
-import { Button } from "@/components/ui/button";
-import { Shield, Thermometer, Truck, CheckCircle } from "lucide-react";
-import heroImage from "@/assets/hero-cryo-lab.jpg";
+import React from 'react';
+import ExternalLinkButton from './animata/shining-button';
 
-const Hero = () => {
+const HeroSection: React.FC = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center bg-gradient-light">
-      {/* Background Image */}
-      <div className="absolute inset-0 opacity-10">
-        <img 
-          src={heroImage} 
-          alt="Professional cryogenic laboratory" 
-          className="w-full h-full object-cover"
+    <div id="hero" className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 relative">
+      {/* Background Pattern - Enlarged and Full Coverage */}
+      <div className="absolute inset-0 opacity-10 z-0">
+        <div 
+          className="w-full h-full" 
+          style={{
+            backgroundImage: "url('/images/bg.png')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat"
+          }}
         />
-        <div className="absolute inset-0 bg-gradient-hero opacity-40"></div>
       </div>
-
-      <div className="container mx-auto px-4 py-20 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Content */}
-          <div className="space-y-8">
-            <div className="space-y-4">
-              <h1 className="font-poppins font-bold text-5xl lg:text-6xl text-foreground leading-tight">
-                Your Trusted
-                <span className="text-primary block">Cryo Shipper</span>
-              </h1>
-              <p className="font-inter text-xl text-foreground/70 leading-relaxed">
-                Southeast Asia's leading specialist in cryogenic shipping for IVF samples, 
-                embryos, and stem cells. IATA compliant with door-to-door service ensuring 
-                complete cold chain integrity.
-              </p>
+      
+      {/* Hero Content */}
+      <div className="container mx-auto px-4 md:px-8 py-8 md:py-16 relative z-10">
+        {/* U-Shaped Layout */}
+        <div className="flex flex-col lg:flex-row justify-between items-center lg:items-start gap-8">
+          {/* Left Side Images - Hidden on mobile and tablet */}
+          <div className="hidden lg:flex flex-col gap-8">
+            <div className="w-64 h-64 bg-gray-300 rounded-lg overflow-hidden shadow-lg">
+              <img src="/images/pic1.png" alt="Laboratory samples" className="w-full h-full object-cover" />
             </div>
-
-            {/* Key Features */}
-            <div className="grid sm:grid-cols-2 gap-4">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
-                  <Shield className="w-5 h-5 text-primary" />
-                </div>
-                <span className="font-inter font-medium">IATA Compliant</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
-                  <Thermometer className="w-5 h-5 text-primary" />
-                </div>
-                <span className="font-inter font-medium">Cold Chain Integrity</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
-                  <Truck className="w-5 h-5 text-primary" />
-                </div>
-                <span className="font-inter font-medium">Door-to-Door Service</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
-                  <CheckCircle className="w-5 h-5 text-primary" />
-                </div>
-                <span className="font-inter font-medium">100% Success Rate</span>
-              </div>
-            </div>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="hero" size="lg" className="text-lg">
-                Request Shipping Quote
-              </Button>
-              <Button variant="outline" size="lg" className="text-lg">
-                Learn About Our Process
-              </Button>
-            </div>
-
-            {/* Trust Indicators */}
-            <div className="pt-8 border-t border-border">
-              <p className="font-inter text-sm text-foreground/60 mb-4">
-                Trusted by leading fertility clinics and research institutions
-              </p>
-              <div className="flex flex-wrap gap-6 text-sm font-inter font-medium text-foreground">
-                <span>EU Tissue Directives Compliant</span>
-                <span>•</span>
-                <span>Liquid Nitrogen Specialists</span>
-                <span>•</span>
-                <span>24/7 Monitoring</span>
-              </div>
+            <div className="w-64 h-64 bg-gray-300 rounded-lg overflow-hidden shadow-lg ml-10">
+              <img src="/images/pic3.png" alt="Cryogenic storage" className="w-full h-full object-cover" />
             </div>
           </div>
 
-          {/* Visual Element */}
-          <div className="relative">
-            <div className="relative bg-gradient-primary rounded-2xl p-8 shadow-strong">
-              <div className="bg-background/95 rounded-xl p-6 space-y-6">
-                <h3 className="font-poppins font-semibold text-xl text-foreground">
-                  Specialized Transport Services
-                </h3>
-                
-                <div className="space-y-4">
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-primary rounded-full"></div>
-                    <span className="font-inter">IVF Samples (Eggs, Embryos, Sperm)</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-primary rounded-full"></div>
-                    <span className="font-inter">Stem Cell Shipping</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-primary rounded-full"></div>
-                    <span className="font-inter">Reproductive Cell Transport</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-primary rounded-full"></div>
-                    <span className="font-inter">Research Specimens</span>
-                  </div>
-                </div>
+          {/* Center Content */}
+          <div className="flex-1 px-4 md:px-8 lg:px-16 text-center flex flex-col justify-center items-center min-h-[400px] lg:min-h-[600px]">
+            <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-4xl text-gray-800 mb-6 md:mb-8 leading-tight">
+              Your trusted cyro shipper for<br className="hidden sm:block" />
+              <span className="sm:hidden"> </span>assisted reproduction
+            </h1>
+            <div>
+              <ExternalLinkButton />
+            </div>
+          </div>
 
-                <div className="pt-4 border-t border-border">
-                  <p className="font-inter text-sm text-muted-foreground">
-                    Operating from Kuala Lumpur & Seremban with global reach
-                  </p>
-                </div>
-              </div>
+          {/* Right Side Images - Hidden on mobile and tablet */}
+          <div className="hidden lg:flex flex-col gap-8">
+            <div className="w-64 h-64 bg-gray-300 rounded-lg overflow-hidden shadow-lg">
+              <img src="/images/pic2.png" alt="Cryogenic process" className="w-full h-full object-cover" />
+            </div>
+            <div className="w-64 h-64 bg-gray-300 rounded-lg overflow-hidden shadow-lg">
+              <img src="/images/pic5.png" alt="Sample container" className="w-full h-full object-cover" />
             </div>
           </div>
         </div>
+
+        {/* Bottom Center Image - Hidden on mobile and tablet */}
+        <div className="hidden lg:flex justify-center mt-8">
+          <div className="w-64 h-64 bg-gray-300 rounded-lg overflow-hidden shadow-lg">
+            <img src="/images/pic4.png" alt="Laboratory work" className="w-full h-full object-cover" />
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
   );
 };
 
-export default Hero;
+export default HeroSection;

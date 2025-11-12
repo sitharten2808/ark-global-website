@@ -26,6 +26,9 @@ export default {
 				'gradient-primary': 'var(--gradient-primary)',
 				'gradient-hero': 'var(--gradient-hero)',
 				'gradient-light': 'var(--gradient-light)',
+				striped:
+          "repeating-linear-gradient(45deg, #3B3A3D, #3B3A3D 5px, transparent 5px, transparent 20px)",
+      
 			},
 			boxShadow: {
 				'soft': 'var(--shadow-soft)',
@@ -86,6 +89,16 @@ export default {
 				sm: 'calc(var(--radius) - 4px)'
 			},
 			keyframes: {
+				"blink-red": {
+          "0%, 100%": {
+            backgroundColor: "rgba(239, 68, 68, 0.7)",
+            boxShadow: "0 0 30px 10px rgba(239, 68, 68, 0.5)",
+          },
+          "50%": {
+            backgroundColor: "rgba(239, 68, 68, 0.5)",
+            boxShadow: "0 0 30px 10px rgba(239, 68, 68, 1)",
+          },
+        },
 				'accordion-down': {
 					from: {
 						height: '0'
@@ -104,6 +117,7 @@ export default {
 				}
 			},
 			animation: {
+				"blink-red": "blink-red 2s infinite linear",
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out'
 			}
