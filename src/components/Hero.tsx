@@ -1,78 +1,67 @@
-import { Button } from "@/components/ui/button";
-import ivfSamplesLeft from "@/assets/ivf-samples-left.jpg";
-import cryoWorkRight from "@/assets/cryo-work-right.jpg";
-import cryoDewarBottomLeft from "@/assets/cryo-dewar-bottom-left.jpg";
-import embryoLabBottomCenter from "@/assets/embryo-lab-bottom-center.jpg";
-import cryoContainerBottomRight from "@/assets/cryo-container-bottom-right.jpg";
+import React from 'react';
+import ExternalLinkButton from './animata/shining-button';
 
-const Hero = () => {
+const HeroSection: React.FC = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center bg-gradient-light pt-24">
-      <div className="container mx-auto px-4 py-20">
-        {/* U-Shaped Image Layout */}
-        <div className="relative max-w-7xl mx-auto">
-          {/* Top Row - Left and Right Images */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-            <div className="w-full h-64 md:h-80 rounded-2xl overflow-hidden shadow-elegant">
-              <img 
-                src={ivfSamplesLeft} 
-                alt="IVF samples in laboratory" 
-                className="w-full h-full object-cover"
-              />
+    <div id="hero" className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 relative">
+      {/* Background Pattern - Enlarged and Full Coverage */}
+      <div className="absolute inset-0 opacity-10 z-0">
+        <div 
+          className="w-full h-full" 
+          style={{
+            backgroundImage: "url('/images/bg.png')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat"
+          }}
+        />
+      </div>
+      
+      {/* Hero Content */}
+      <div className="container mx-auto px-4 md:px-8 py-8 md:py-16 relative z-10">
+        {/* U-Shaped Layout */}
+        <div className="flex flex-col lg:flex-row justify-between items-center lg:items-start gap-8">
+          {/* Left Side Images - Hidden on mobile and tablet */}
+          <div className="hidden lg:flex flex-col gap-8">
+            <div className="w-64 h-64 bg-gray-300 rounded-lg overflow-hidden shadow-lg">
+              <img src="/images/pic1.png" alt="Laboratory samples" className="w-full h-full object-cover" />
             </div>
-            <div className="w-full h-64 md:h-80 rounded-2xl overflow-hidden shadow-elegant">
-              <img 
-                src={cryoWorkRight} 
-                alt="Cryogenic work in laboratory" 
-                className="w-full h-full object-cover"
-              />
+            <div className="w-64 h-64 bg-gray-300 rounded-lg overflow-hidden shadow-lg ml-10">
+              <img src="/images/pic3.png" alt="Cryogenic storage" className="w-full h-full object-cover" />
             </div>
           </div>
 
           {/* Center Content */}
-          <div className="text-center py-12 px-4">
-            <h1 className="font-poppins font-bold text-4xl lg:text-6xl text-foreground mb-6 leading-tight">
-              Your trusted cryo shipper for
-              <br />
-              <span className="text-foreground">assisted reproduction</span>
+          <div className="flex-1 px-4 md:px-8 lg:px-16 text-center flex flex-col justify-center items-center min-h-[400px] lg:min-h-[600px]">
+            <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-4xl text-gray-800 mb-6 md:mb-8 leading-tight">
+              Your trusted cyro shipper for<br className="hidden sm:block" />
+              <span className="sm:hidden"> </span>assisted reproduction
             </h1>
-            <Button 
-              variant="default" 
-              size="lg" 
-              className="bg-[#4BA3E3] hover:bg-[#3d8bc7] text-white px-12 py-6 text-lg rounded-full shadow-lg"
-            >
-              Contact Us
-            </Button>
+            <div>
+              <ExternalLinkButton />
+            </div>
           </div>
 
-          {/* Bottom Row - Three Images */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-            <div className="w-full h-56 md:h-72 rounded-2xl overflow-hidden shadow-elegant">
-              <img 
-                src={cryoDewarBottomLeft} 
-                alt="Cryogenic dewar handling" 
-                className="w-full h-full object-cover"
-              />
+          {/* Right Side Images - Hidden on mobile and tablet */}
+          <div className="hidden lg:flex flex-col gap-8">
+            <div className="w-64 h-64 bg-gray-300 rounded-lg overflow-hidden shadow-lg">
+              <img src="/images/pic2.png" alt="Cryogenic process" className="w-full h-full object-cover" />
             </div>
-            <div className="w-full h-56 md:h-72 rounded-2xl overflow-hidden shadow-elegant">
-              <img 
-                src={embryoLabBottomCenter} 
-                alt="Embryo laboratory work" 
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="w-full h-56 md:h-72 rounded-2xl overflow-hidden shadow-elegant">
-              <img 
-                src={cryoContainerBottomRight} 
-                alt="Cryo container sealing" 
-                className="w-full h-full object-cover"
-              />
+            <div className="w-64 h-64 bg-gray-300 rounded-lg overflow-hidden shadow-lg">
+              <img src="/images/pic5.png" alt="Sample container" className="w-full h-full object-cover" />
             </div>
           </div>
         </div>
+
+        {/* Bottom Center Image - Hidden on mobile and tablet */}
+        <div className="hidden lg:flex justify-center mt-8">
+          <div className="w-64 h-64 bg-gray-300 rounded-lg overflow-hidden shadow-lg">
+            <img src="/images/pic4.png" alt="Laboratory work" className="w-full h-full object-cover" />
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
   );
 };
 
-export default Hero;
+export default HeroSection;
